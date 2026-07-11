@@ -272,7 +272,7 @@ function App() {
       const anchor = target.closest('a');
       if (anchor) {
         const href = anchor.getAttribute('href');
-        // Let route links (#/app/…) fall through to the browser/hash router.
+        // Only intercept same-page section anchors (#hero, #pricing, etc); everything else (external links, absolute URLs to app.agenttag.me) is left alone.
         if (href && href.startsWith('#') && !href.startsWith('#/')) {
           e.preventDefault();
           const targetEl = document.querySelector(href);
@@ -726,7 +726,7 @@ function App() {
         </div>
         <a className="nav-link" href="#pricing">Pricing</a>
         <a className="nav-link" href="#surface">Docs</a>
-        <a className="nav-link" href="/app/support">Support</a>
+        <a className="nav-link" href="/support">Support</a>
       </div>
     </div>
     
@@ -779,7 +779,7 @@ function App() {
       <a className="mobile-nav-link" href="#ledger" onClick={() => setMobileMenuOpen(false)}>Audit</a>
       <a className="mobile-nav-link" href="#pricing" onClick={() => setMobileMenuOpen(false)}>Pricing</a>
       <a className="mobile-nav-link" href="#surface" style={{opacity: ".7"}} onClick={() => setMobileMenuOpen(false)}>Docs</a>
-      <a className="mobile-nav-link" href="/app/support" onClick={() => setMobileMenuOpen(false)}>Support</a>
+      <a className="mobile-nav-link" href="/support" onClick={() => setMobileMenuOpen(false)}>Support</a>
       <a className="btn btn-ink" href="#cta" style={{marginTop: "10px", justifyContent: "center", width: "100%"}} onClick={() => setMobileMenuOpen(false)}>Request access</a>
     </div>
   </div>
@@ -952,7 +952,7 @@ function App() {
 <a 
   ref={ctaRef}
   className="btn-cta-primary" 
-  href="/app/dashboard"
+  href="https://app.agenttag.me/"
   onMouseEnter={() => { isCtaHoveredRef.current = true; }}
   onMouseLeave={() => {
     isCtaHoveredRef.current = false;
@@ -1024,7 +1024,7 @@ function App() {
         </div>
         <div className="window-address-bar">
           <svg width="10" height="10" style={{ marginRight: "4px" }} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-          <span>agenttag.me/app/{showcaseTab}</span>
+          <span>app.agenttag.me/{showcaseTab}</span>
         </div>
       </div>
       <div className="showcase-window-body">
@@ -1981,7 +1981,7 @@ function App() {
 <li style={{display: "flex", gap: "10px", fontSize: "14px", color: "var(--muted)", lineHeight: "1.5"}}><span style={{flex: "none", marginTop: "1px"}}><svg fill="none" height="15" viewBox="0 0 24 24" width="15"><path d="M5 12.5l4 4 10-10.5" stroke="var(--crimson)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg></span><span>Hash-chained audit ledger</span></li>
 <li style={{display: "flex", gap: "10px", fontSize: "14px", color: "var(--muted)", lineHeight: "1.5"}}><span style={{flex: "none", marginTop: "1px"}}><svg fill="none" height="15" viewBox="0 0 24 24" width="15"><path d="M5 12.5l4 4 10-10.5" stroke="var(--crimson)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg></span><span>Direct line to the founders</span></li>
 </ul>
-<a className="btn btn-crimson btn-cta-new" href="/app/dashboard" style={{justifyContent: "center"}}>Get beta access</a>
+<a className="btn btn-crimson btn-cta-new" href="https://app.agenttag.me/" style={{justifyContent: "center"}}>Get beta access</a>
 <p style={{margin: "14px 0 0", textAlign: "center", fontSize: "12.5px", color: "var(--faint)"}}>No credit card. Cancel anytime. Your data stays yours.</p>
 </div>
 {/* What happens at GA */}
@@ -2037,7 +2037,7 @@ function App() {
                       >
                         <div className="faq-a">
                           <p>An agent passport is the agent's own cryptographic identity — an Ed25519 keypair bound to a W3C DID. It signs requests and audit entries so permissions can be scoped and revoked cleanly, and so every action is attributable to a specific agent rather than to whoever has your API key.</p>
-                          <a className="faq-a-foot" href="/app/support">Read more in Support Center →</a>
+                          <a className="faq-a-foot" href="/support">Read more in Support Center →</a>
                         </div>
                       </motion.div>
                     )}
@@ -2074,7 +2074,7 @@ function App() {
                       >
                         <div className="faq-a">
                           <p>API keys give broad access to whoever has them. AgentTag gives each agent a separate identity with narrow, policy-based permissions — spend caps, allowed tools, expiring scopes — and a signed audit trail you can verify after the fact.</p>
-                          <a className="faq-a-foot" href="/app/support">Read more in Support Center →</a>
+                          <a className="faq-a-foot" href="/support">Read more in Support Center →</a>
                         </div>
                       </motion.div>
                     )}
@@ -2111,7 +2111,7 @@ function App() {
                       >
                         <div className="faq-a">
                           <p>Mandates are signed policy documents that define what an agent can do, how much it can spend, when it must ask for human approval, and when access expires. They are version-controlled, revocable, and evaluated at request time by the policy engine.</p>
-                          <a className="faq-a-foot" href="/app/support">Read more in Support Center →</a>
+                          <a className="faq-a-foot" href="/support">Read more in Support Center →</a>
                         </div>
                       </motion.div>
                     )}
@@ -2148,7 +2148,7 @@ function App() {
                       >
                         <div className="faq-a">
                           <p>Run `agenttag mcp add --client claude` to mint a passport and register your first mandate. The CLI walks you through the rest, and you can finish setup from the Setup and CLI tab in the control plane.</p>
-                          <a className="faq-a-foot" href="/app/support">Read more in Support Center →</a>
+                          <a className="faq-a-foot" href="/support">Read more in Support Center →</a>
                         </div>
                       </motion.div>
                     )}
@@ -2185,7 +2185,7 @@ function App() {
                       >
                         <div className="faq-a">
                           <p>Yes. Each entry includes the hash of the previous entry, so the chain is verifiable end-to-end and any retro-edit would break every hash that follows. You can export and re-verify the chain yourself at any time.</p>
-                          <a className="faq-a-foot" href="/app/support">Read more in Support Center →</a>
+                          <a className="faq-a-foot" href="/support">Read more in Support Center →</a>
                         </div>
                       </motion.div>
                     )}
@@ -2222,7 +2222,7 @@ function App() {
                       >
                         <div className="faq-a">
                           <p>Nothing — the public beta is free with generous usage limits. When we move to general availability, you will get 30 days notice and founding-user pricing will be locked in.</p>
-                          <a className="faq-a-foot" href="/app/support">Read more in Support Center →</a>
+                          <a className="faq-a-foot" href="/support">Read more in Support Center →</a>
                         </div>
                       </motion.div>
                     )}
@@ -2259,7 +2259,7 @@ function App() {
                       >
                         <div className="faq-a">
                           <p>No. AgentTag sits in front of your existing MCP servers as a policy surface — your Claude Desktop, CrewAI, or LangChain clients keep working unchanged, but every request now flows through signed mandates first.</p>
-                          <a className="faq-a-foot" href="/app/support">Read more in Support Center →</a>
+                          <a className="faq-a-foot" href="/support">Read more in Support Center →</a>
                         </div>
                       </motion.div>
                     )}
@@ -2296,7 +2296,7 @@ function App() {
                       >
                         <div className="faq-a">
                           <p>Revoke it. The mandate stops being honored on the next request, in-flight sessions are killed, and the audit ledger records the revocation event with a reason. You can also pre-issue scoped, short-lived passports so a single leak is bounded.</p>
-                          <a className="faq-a-foot" href="/app/support">Read more in Support Center →</a>
+                          <a className="faq-a-foot" href="/support">Read more in Support Center →</a>
                         </div>
                       </motion.div>
                     )}
@@ -2304,7 +2304,7 @@ function App() {
                 </div>
 </div>
 <div className="faq-footer" style={{marginTop: "32px", textAlign: "center"}}>
-<a className="btn btn-ghost" href="/app/support" style={{padding: "11px 24px"}}>
+<a className="btn btn-ghost" href="/support" style={{padding: "11px 24px"}}>
   Browse all 12 articles in Support Center
   <svg fill="none" height="14" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" viewBox="0 0 24 24" width="14" style={{marginLeft: "6px"}}><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
 </a>
@@ -2325,7 +2325,7 @@ function App() {
       </p>
 <form className="cta-form-new" onSubmit={onSubmit}>
 <input aria-label="Email address" className="cta-input-new" id="cta-email" name="email" placeholder="you@company.com" required type="email"/>
-<button className="btn btn-crimson btn-cta-new" type="submit" onClick={() => { setTimeout(() => { window.location.hash = '/app/dashboard'; }, 400); }}>Get beta access</button>
+<button className="btn btn-crimson btn-cta-new" type="submit" onClick={() => { setTimeout(() => { window.location.href = 'https://app.agenttag.me/'; }, 400); }}>Get beta access</button>
 </form>
 <p className="cta-footer-note">The human stays accountable. The agent gets its own identity.</p>
 </div>
@@ -2385,7 +2385,7 @@ function App() {
 <a className="footer-link" href="/case-studies">Case Studies</a>
 <a className="footer-link" href="/blog">Blog & Insights</a>
 <a className="footer-link" href="/research">Research</a>
-<a className="footer-link" href="/app/support">FAQ</a>
+<a className="footer-link" href="/support">FAQ</a>
 <a className="footer-link" href="https://status.agenttag.me" target="_blank" rel="noopener noreferrer">Status</a>
 </div>
 <div>
