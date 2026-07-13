@@ -377,7 +377,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     const defaults: Settings = {
       enforcement: true,
       licenseKey: "",
-      apiUrl: (import.meta.env?.VITE_AGENTGRID_API as string | undefined) ?? "",
+      apiUrl: (import.meta.env.VITE_AGENTGRID_API as string | undefined) ?? "",
       stepUpThreshold: 200,
       notifyEmail: true,
       notifySms: true,

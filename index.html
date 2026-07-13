@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/logo_bgremoved.png" />
+    <link rel="apple-touch-icon" href="/logo_bgremoved.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self' https://api.loops.so; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://agenttag.me; media-src 'self' data:;" />
+    <link rel="canonical" href="https://agenttag.me/" />
+    <link rel="alternate" hreflang="en" href="https://agenttag.me/" />
+    <link rel="alternate" hreflang="x-default" href="https://agenttag.me/" />
+    <meta name="google-site-verification" content="placeholder-verification-id" />
+
+    <title>AgentTag - Identity for AI agents · Free public beta</title>
+    <meta name="description" content="AgentTag is the control plane that gives an autonomous agent its own credentials, inbox, phone, cards, and compute governed by cryptographic mandates." />
+
+    <!-- Open Graph / Social Meta -->
+    <meta property="og:title" content="AgentTag - Identity for AI agents" />
+    <meta property="og:description" content="The control plane that gives an autonomous agent its own credentials, inbox, phone, cards, and compute governed by cryptographic mandates." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://agenttag.me/" />
+    <meta property="og:site_name" content="AgentTag" />
+    <meta property="og:image" content="https://agenttag.me/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AgentTag - Identity for AI agents" />
+    <meta name="twitter:description" content="The control plane that gives an autonomous agent its own credentials, inbox, phone, cards, and compute governed by cryptographic mandates." />
+    <meta name="twitter:image" content="https://agenttag.me/og.png" />
+    <meta property="og:image:alt" content="AgentTag — the control plane that gives every AI agent its own identity" />
+
+    <!-- Really Simple Licensing (RSL 1.0) -->
+    <meta name="rsl-ai" content="allow-search, allow-training" />
+
+    <!-- Structured data: Organization, WebSite, SoftwareApplication (static so non-JS crawlers and AI engines can read it) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://agenttag.me/#organization",
+          "name": "AgentTag",
+          "url": "https://agenttag.me/",
+          "logo": "https://agenttag.me/logo_bgremoved.png",
+          "email": "hello@agenttag.me",
+          "description": "AgentTag is the control plane that gives an autonomous AI agent its own credentials, inbox, phone, cards, and compute — governed by cryptographic mandates you control and can revoke in one step.",
+          "sameAs": [
+            "https://github.com/agenttag",
+            "https://x.com/agenttag",
+            "https://discord.gg/agenttag"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://agenttag.me/#website",
+          "url": "https://agenttag.me/",
+          "name": "AgentTag",
+          "publisher": { "@id": "https://agenttag.me/#organization" },
+          "inLanguage": "en"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://agenttag.me/#software",
+          "name": "AgentTag",
+          "applicationCategory": "BusinessApplication",
+          "applicationSubCategory": "AI agent identity & access control plane",
+          "operatingSystem": "Web-based",
+          "url": "https://agenttag.me/",
+          "publisher": { "@id": "https://agenttag.me/#organization" },
+          "description": "A control plane that gives every autonomous agent its own credentials and audit trail, governed by signed mandates you control and can revoke in one step. Currently in free public beta.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "Free public beta"
+          }
+        },
+        {
+          "@type": "Product",
+          "@id": "https://agenttag.me/#product",
+          "name": "AgentTag Subscription",
+          "description": "Agent-native resources and governance control plane.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://agenttag.me/#author",
+          "name": "AgentTag Team",
+          "url": "https://agenttag.me/about"
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQ structured data — for AI/answer-engine citation (Google retired FAQ rich results May 2026) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": "https://agenttag.me/#faq",
+      "isPartOf": { "@id": "https://agenttag.me/#website" },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What exactly is an agent passport?",
+          "acceptedAnswer": { "@type": "Answer", "text": "An agent passport is the agent's own cryptographic identity — an Ed25519 keypair bound to a W3C DID. It signs requests and audit entries so permissions can be scoped and revoked cleanly, and so every action is attributable to a specific agent rather than to whoever has your API key." }
+        },
+        {
+          "@type": "Question",
+          "name": "How is this different from giving an agent my API keys?",
+          "acceptedAnswer": { "@type": "Answer", "text": "API keys give broad access to whoever has them. AgentTag gives each agent a separate identity with narrow, policy-based permissions — spend caps, allowed tools, expiring scopes — and a signed audit trail you can verify after the fact." }
+        },
+        {
+          "@type": "Question",
+          "name": "What does 'governed by mandates' mean in practice?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Mandates are signed policy documents that define what an agent can do, how much it can spend, when it must ask for human approval, and when access expires. They are version-controlled, revocable, and evaluated at request time by the policy engine." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I install AgentTag for the first time?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Run `agenttag mcp add --client claude` to mint a passport and register your first mandate. The CLI walks you through the rest, and you can finish setup from the Setup and CLI tab in the control plane." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the audit ledger really tamper-evident?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each entry includes the hash of the previous entry, so the chain is verifiable end-to-end and any retro-edit would break every hash that follows. You can export and re-verify the chain yourself at any time." }
+        },
+        {
+          "@type": "Question",
+          "name": "What does it cost during the beta?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nothing — the public beta is free with generous usage limits. When we move to general availability, you will get 30 days notice and founding-user pricing will be locked in." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to replace my existing MCP clients?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. AgentTag sits in front of your existing MCP servers as a policy surface — your Claude Desktop, CrewAI, or LangChain clients keep working unchanged, but every request now flows through signed mandates first." }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if a passport is compromised?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Revoke it. The mandate stops being honored on the next request, in-flight sessions are killed, and the audit ledger records the revocation event with a reason. You can also pre-issue scoped, short-lived passports so a single leak is bounded." }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:opsz,wght@14..32,400..700&family=JetBrains+Mono:wght@400..700&display=swap" rel="stylesheet">
+    
+    <!-- Prevent flash of unapplied theme -->
+    <script>
+      (function(){try{if(localStorage.getItem('aeg-theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}})()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

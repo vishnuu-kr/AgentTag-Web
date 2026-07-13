@@ -1,165 +1,104 @@
-import { cn } from "@/lib/utils";
-import { FullWidthDivider } from "@/components/full-width-divider";
-import { GridFiller } from "@/components/grid-filler";
 
-export type BlogType = {
+type BlogType = {
 	title: string;
 	date: string;
 	description: string;
 	category: string;
-	author: string;
+	readTime: string;
 	href: string;
 };
 
 const blogs: BlogType[] = [
 	{
-		title: "The New Design Principles for Modern Web Apps",
-		date: "May 20 2025",
-		category: "Design",
-		author: "Sarah Chen",
+		title: "How to Secure AI Agents: The Ultimate Guide to Cryptographic Mandates",
+		date: "Mar 12 2026",
+		category: "Security",
+		readTime: "8 min read",
 		description:
-			"We dive deep into modern UI/UX fundamentals and explore how small changes can make a massive impact on user retention.",
-		href: "#",
+			"Learn the exact framework for applying deterministic boundaries to autonomous AI agents, preventing unauthorized actions and securing enterprise data.",
+		href: "/blog/cryptographic-mandates",
 	},
 	{
-		title: "Letter Club: An Ode to the Slow Web",
-		date: "Aug 14 2025",
-		category: "Design",
-		author: "Mike Allyn",
+		title: "Why Your Autonomous AI Will Fail Without a Hash-Chained Audit Ledger",
+		date: "Mar 05 2026",
+		category: "Compliance",
+		readTime: "6 min read",
 		description:
-			"In a world of instant gratification, we explore the beauty of thoughtful, long-form content and meaningful connections over time.",
-		href: "#",
+			"The hidden risks of untraceable agent actions. Discover why immutable, cryptographically verifiable logs are mandatory for production AI.",
+		href: "/blog/hash-chained-audit-ledger",
 	},
 	{
-		title: "Carve Out Space for Opportunity and Coffee",
-		date: "Sep 19 2025",
-		category: "Productivity",
-		author: "Jessica Doi",
-		description:
-			"Taking a break is work. Learn how simple rituals like a morning coffee can boost your creativity and productivity.",
-		href: "#",
-	},
-	{
-		title: "Building Modern Applications with Shadcn UI Components",
-		date: "Oct 12 2025",
-		category: "Design",
-		author: "Tom Cook",
-		description:
-			"A comprehensive guide to leveraging Shadcn UI to build accessible, customizable, and beautiful user interfaces with incredible speed.",
-		href: "#",
-	},
-	{
-		title: "Fesgin: Bridging The Gap Between Design and Code",
-		date: "Nov 23 2025",
-		category: "Design",
-		author: "David Park",
-		description:
-			"How designers and developers can collaborate more effectively to bridge the gap between creative vision and technical implementation.",
-		href: "#",
-	},
-	{
-		title: "The Art of Simplicity in User Interface Design",
-		date: "Dec 05 2025",
-		category: "Minimalism",
-		author: "Emma Wilson",
-		description:
-			"Discover how minimalism in design leads to clearer communication and a more intuitive user experience, focusing on what matters.",
-		href: "#",
-	},
-	{
-		title: "Why Web Performance Matters For Your Business Growth",
-		date: "Jan 18 2026",
+		title: "Mastering the Model Context Protocol (MCP) in 2026",
+		date: "Feb 22 2026",
 		category: "Engineering",
-		author: "Chris Martin",
+		readTime: "10 min read",
 		description:
-			"We discuss techniques for improving web performance, from lazy loading to code splitting, ensuring your application runs smoothly.",
-		href: "#",
+			"A comprehensive deep dive into MCP policy surfaces. Standardize secure tool access across Claude, ChatGPT, and custom LLM applications.",
+		href: "/blog/mcp-policy-surfaces",
 	},
 	{
-		title: "Practicing Digital Well-being in an Always-On World",
-		date: "Feb 02 2026",
-		category: "Lifestyle",
-		author: "Olivia Kim",
+		title: "The Complete Guide to Step-Up Authentication for AI Workflows",
+		date: "Feb 14 2026",
+		category: "Platform",
+		readTime: "7 min read",
 		description:
-			"Strategies for maintaining a healthy relationship with digital tools, setting boundaries, and ensuring technology serves us rather than consumes us.",
-		href: "#",
+			"Stop flying blind. Implement human-in-the-loop approvals and step-up auth to safeguard high-stakes operations in your AI infrastructure.",
+		href: "/blog/step-up-authentication",
+	},
+	{
+		title: "Stop Flying Blind: Real-Time Governance for Autonomous Agents",
+		date: "Jan 30 2026",
+		category: "Governance",
+		readTime: "5 min read",
+		description:
+			"Master real-time policy engines. Ensure total compliance, security, and operational visibility across your entire deployed AI fleet.",
+		href: "/blog/real-time-governance",
+	},
+	{
+		title: "Decentralized Identity (DID) for AI: Everything You Need to Know",
+		date: "Jan 18 2026",
+		category: "Identity",
+		readTime: "9 min read",
+		description:
+			"Unlock the future of identity management. How Ed25519 DIDs and cryptographic passports provide perfect authorization for distributed AI.",
+		href: "/blog/decentralized-identity-did",
 	},
 ];
 
-export function BlogsSection({
-	blogs: customBlogs,
-	title = "Latest Blogs",
-	description = "Discover the latest trends and insights in the world of design and technology.",
-}: {
-	blogs?: BlogType[];
-	title?: string;
-	description?: string;
-}) {
-	const displayBlogs = customBlogs || blogs;
+export function BlogsSection() {
 	return (
-		<div className="mx-auto w-full max-w-5xl py-4">
-			<div className="space-y-2 px-4 py-8 md:py-12">
-				<h1 className="font-display font-semibold text-2xl tracking-wide md:text-4xl">
-					{title}
-				</h1>
-				<p className="text-muted-foreground text-sm">
-					{description}
+		<div className="mx-auto w-full max-w-4xl py-16 px-4 font-sans bg-background text-foreground">
+			<div className="mb-16 border-b border-border/20 pb-8">
+				<h2 className="text-4xl font-semibold tracking-tight text-foreground mb-3">
+					Blog
+				</h2>
+				<p className="text-muted-foreground text-lg max-w-2xl">
+					Expert strategies and technical deep dives for securing autonomous AI.
 				</p>
 			</div>
-			<FullWidthDivider contained={true} />
-			<div className="grid grid-cols-1 gap-px bg-border/20 sm:grid-cols-2 md:grid-cols-3">
-				{displayBlogs.map((blog) => (
-					<BlogCard {...blog} key={blog.title} />
+			
+			<div className="flex flex-col">
+				{blogs.map((blog, idx) => (
+					<BlogCard {...blog} key={idx} />
 				))}
-				<GridFiller
-					className="bg-background"
-					mdColumns={3}
-					smColumns={4}
-					totalItems={displayBlogs.length}
-				/>
 			</div>
-			<FullWidthDivider contained={true} />
 		</div>
 	);
 }
 
-function BlogCard({
-	title,
-	date,
-	description,
-	category,
-	author,
-	className,
-	...props
-}: React.ComponentProps<"a"> & BlogType) {
+function BlogCard({ title, date, description, href }: BlogType) {
 	return (
-		<a
-			className={cn(
-				"group relative w-full bg-background px-6 py-12 text-muted-foreground transition-all duration-300 hover:cursor-pointer hover:bg-muted/40 hover:text-foreground hover:shadow-[0_0_40px_-10px_rgba(0,0,0,0.1)] hover:z-10 dark:hover:bg-accent/20 dark:hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.03)] active:bg-accent md:px-8 active:dark:bg-accent/50",
-				className
-			)}
-			{...props}
-		>
-			<h3 className="mb-3 font-display line-clamp-2 font-medium text-foreground text-lg md:text-xl">
-				{title}
-			</h3>
-			<div className="mb-3 flex items-center gap-2">
-				<span className="text-muted-foreground text-xs group-hover:text-foreground">
-					{category}
-				</span>
-				<div className="inline-flex size-1 rounded-full bg-muted-foreground" />
-				<span className="text-muted-foreground text-xs group-hover:text-foreground">
-					{date}
-				</span>
-			</div>
-			<p className="mb-8 line-clamp-3 text-muted-foreground text-sm tracking-wide group-hover:text-foreground">
-				{description}
-			</p>
-			<div className="flex items-center gap-1.5">
-				by
-				<span className="font-medium font-mono text-foreground/80 text-xs group-hover:text-foreground md:text-sm">
-					{author}
-				</span>
+		<a href={href} className="group block py-10 border-b border-border/10 last:border-0 hover:bg-muted/10 transition-colors px-4 -mx-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
+			<div className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-start">
+				<div className="text-sm font-mono text-muted-foreground/70 shrink-0 sm:w-32 pt-1">{date}</div>
+				<div className="space-y-3">
+					<h3 className="text-2xl font-medium tracking-tight text-foreground group-hover:text-primary transition-colors text-balance">
+						{title}
+					</h3>
+					<p className="text-base text-muted-foreground leading-relaxed max-w-2xl">
+						{description}
+					</p>
+				</div>
 			</div>
 		</a>
 	);
