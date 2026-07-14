@@ -6246,7 +6246,7 @@
     padding: 0 18px !important;
     height: 58px;
   }
-  .ad-search-ico { color: var(--d-muted); flex: none; }
+  .ad-search-ico { color: var(--d-muted); flex: none; width: 18px; height: 18px; }
   .ad-search-input {
     flex: 1;
     border: 0;

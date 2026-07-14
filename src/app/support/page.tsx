@@ -253,7 +253,7 @@ export default function SupportPage() {
 
           {/* ── Search bar (full width) ──────────────────────── */}
           <div className="ad-search-card ad-card">
-            <svg className="ad-search-ico" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
+            <svg className="ad-search-ico" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
               <circle cx="11" cy="11" r="7"></circle>
               <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
             </svg>
