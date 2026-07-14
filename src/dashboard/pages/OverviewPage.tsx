@@ -31,9 +31,9 @@ export function OverviewPage({ onNav }: { onNav: (k: RouteKey) => void }) {
       <div className="flex items-center justify-between">
         <div className="flex flex-col gap-0.5">
           <div className="flex items-center gap-2">
-            <h1 className="text-[1.5rem] leading-[1.15] font-semibold tracking-tight text-foreground" style={{ letterSpacing: "-0.015em" }}>
+            <h2 className="text-[1.5rem] leading-[1.15] font-semibold tracking-tight text-foreground" style={{ letterSpacing: "-0.015em" }}>
               Overview
-            </h1>
+            </h2>
           </div>
           <p className="mt-0.5 text-xs text-muted-foreground">
             Live operational metrics and system telemetry.

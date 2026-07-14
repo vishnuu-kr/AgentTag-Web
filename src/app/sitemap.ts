@@ -27,6 +27,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: 'https://agenttag.me/case-studies',
+      lastModified: new Date().toISOString().split('T')[0],
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: 'https://agenttag.me/integrations',
       lastModified: new Date().toISOString().split('T')[0],
       changeFrequency: 'weekly',
@@ -40,6 +46,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://agenttag.me/security',
+      lastModified: new Date().toISOString().split('T')[0],
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://agenttag.me/research',
       lastModified: new Date().toISOString().split('T')[0],
       changeFrequency: 'monthly',
       priority: 0.8,
@@ -82,6 +94,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://agenttag.me/terms',
+      lastModified: new Date().toISOString().split('T')[0],
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: 'https://agenttag.me/data-tos',
       lastModified: new Date().toISOString().split('T')[0],
       changeFrequency: 'monthly',
       priority: 0.5,
