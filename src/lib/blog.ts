@@ -15,12 +15,12 @@ export type Post = {
   content: string // raw markdown body (frontmatter stripped)
 }
 
-// import.meta.glob with { as: 'raw', eager: true } loads every .mdx file as a
+// import.meta.glob with { query: '?raw', eager: true } loads every .mdx file as a
 // plain string at build time — no MDX compiler needed.
 const rawFiles = import.meta.glob('/content/blog/*.mdx', {
-  as: 'raw',
+  query: '?raw',
   eager: true,
-}) as Record<string, string>
+}) as Record<string, { default: string }>
 
 function parseFrontmatter(raw: string): { meta: Record<string, string>; body: string } {
   const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)/)
@@ -45,9 +45,9 @@ let _cache: Post[] | null = null
 export function getAllPosts(): Post[] {
   if (_cache) return _cache
   _cache = Object.entries(rawFiles)
-    .map(([path, raw]) => {
+    .map(([path, mod]) => {
       const slug = filePathToSlug(path)
-      const { meta, body } = parseFrontmatter(raw)
+      const { meta, body } = parseFrontmatter(mod.default)
       return {
         metadata: {
           slug,
